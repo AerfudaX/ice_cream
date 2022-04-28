@@ -272,14 +272,16 @@ minetest.register_craft({
 	},
 })
 
-minetest.register_craft({
-output = "ice_cream:icecreammatcha 2",
-    recipe = {
+if minetest.get_modpath("tea") ~= nil then
+	minetest.register_craft({
+        output = "ice_cream:icecreammatcha 2",
+        recipe = {
 	    {"tea:crushedmatcha","",""},
 	    {"mobs:egg","group:food_sugar",""},
 	    {"ice_cream:cone","default:ice",""},
-    },
-    replacements = {
+        },
+        replacements = {
 	    {"default:ice", "default:ice"},
 	},
-})
+    })
+end
